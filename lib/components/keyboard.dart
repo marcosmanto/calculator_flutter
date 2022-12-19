@@ -11,6 +11,7 @@ class Keyboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 500,
+      color: Colors.black,
       child: Column(
         children: [
           ButtonRow(
@@ -31,6 +32,7 @@ class Keyboard extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 1),
           ButtonRow(
             buttons: [
               Button(
@@ -51,6 +53,7 @@ class Keyboard extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 1),
           ButtonRow(
             buttons: [
               Button(
@@ -71,6 +74,7 @@ class Keyboard extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 1),
           ButtonRow(
             buttons: [
               Button(
@@ -91,6 +95,7 @@ class Keyboard extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 1),
           ButtonRow(
             buttons: [
               Button.big(
