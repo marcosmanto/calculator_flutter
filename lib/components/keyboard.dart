@@ -1,13 +1,114 @@
+import 'package:calculator_flutter/components/button.dart';
+import 'package:calculator_flutter/components/button_row.dart';
 import 'package:flutter/material.dart';
 
 class Keyboard extends StatelessWidget {
-  const Keyboard({super.key});
+  final void Function(String) onButtonPressed;
+
+  const Keyboard({super.key, required this.onButtonPressed});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 500,
-      color: Colors.amber,
+      child: Column(
+        children: [
+          ButtonRow(
+            buttons: [
+              Button.big(
+                text: 'AC',
+                color: Button.darkColor,
+                onPressed: onButtonPressed,
+              ),
+              Button(
+                text: '%',
+                color: Button.darkColor,
+                onPressed: onButtonPressed,
+              ),
+              Button.operation(
+                text: '/',
+                onPressed: onButtonPressed,
+              ),
+            ],
+          ),
+          ButtonRow(
+            buttons: [
+              Button(
+                text: '7',
+                onPressed: onButtonPressed,
+              ),
+              Button(
+                text: '8',
+                onPressed: onButtonPressed,
+              ),
+              Button(
+                text: '9',
+                onPressed: onButtonPressed,
+              ),
+              Button.operation(
+                text: 'x',
+                onPressed: onButtonPressed,
+              ),
+            ],
+          ),
+          ButtonRow(
+            buttons: [
+              Button(
+                text: '4',
+                onPressed: onButtonPressed,
+              ),
+              Button(
+                text: '5',
+                onPressed: onButtonPressed,
+              ),
+              Button(
+                text: '6',
+                onPressed: onButtonPressed,
+              ),
+              Button.operation(
+                text: '-',
+                onPressed: onButtonPressed,
+              ),
+            ],
+          ),
+          ButtonRow(
+            buttons: [
+              Button(
+                text: '1',
+                onPressed: onButtonPressed,
+              ),
+              Button(
+                text: '2',
+                onPressed: onButtonPressed,
+              ),
+              Button(
+                text: '3',
+                onPressed: onButtonPressed,
+              ),
+              Button.operation(
+                text: '+',
+                onPressed: onButtonPressed,
+              ),
+            ],
+          ),
+          ButtonRow(
+            buttons: [
+              Button.big(
+                text: '0',
+                onPressed: onButtonPressed,
+              ),
+              Button(
+                text: ',',
+                onPressed: onButtonPressed,
+              ),
+              Button.operation(
+                text: '=',
+                onPressed: onButtonPressed,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
