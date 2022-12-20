@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 
 class Keyboard extends StatelessWidget {
   final void Function(String) onButtonPressed;
+  final String decimalSeparator;
 
-  const Keyboard({super.key, required this.onButtonPressed});
+  const Keyboard(
+      {super.key,
+      required this.onButtonPressed,
+      required this.decimalSeparator});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +107,7 @@ class Keyboard extends StatelessWidget {
                 onPressed: onButtonPressed,
               ),
               Button(
-                text: ',',
+                text: decimalSeparator,
                 onPressed: onButtonPressed,
               ),
               Button.operation(

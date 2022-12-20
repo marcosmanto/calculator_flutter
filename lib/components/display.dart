@@ -1,16 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class Display extends StatelessWidget {
   final String text;
-  final NumberFormat? _numberFormat;
 
-  Display({super.key, required this.text, NumberFormat? numberFormat})
-      : _numberFormat =
-            numberFormat ?? NumberFormat('#,##0.00000000', 'pt_BR') {
-    print(_numberFormat!.format(123.575));
-  }
+  const Display({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +19,7 @@ class Display extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: AutoSizeText(
-                _numberFormat!.format(double.tryParse(text)),
+                text,
                 minFontSize: 20,
                 maxFontSize: 80,
                 maxLines: 1,
