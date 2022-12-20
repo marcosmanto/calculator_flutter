@@ -3,6 +3,7 @@ import 'package:calculator_flutter/components/keyboard.dart';
 import 'package:calculator_flutter/models/memory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+//import 'package:intl/intl.dart';
 
 class Calculator extends StatefulWidget {
   const Calculator({super.key});
@@ -17,6 +18,7 @@ class _CalculatorState extends State<Calculator> {
   _onPressed(String text) {
     // ignore: avoid_print
     print(text);
+
     setState(() => memory.applyCommand(text));
   }
 
@@ -26,7 +28,10 @@ class _CalculatorState extends State<Calculator> {
     return MaterialApp(
       home: Scaffold(
         body: Column(children: [
-          Display(text: memory.value),
+          Display(
+            text: memory.value,
+            //numberFormat: NumberFormat('#,##0.00', 'en_US'),
+          ),
           Keyboard(onButtonPressed: _onPressed),
         ]),
       ),
